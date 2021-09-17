@@ -19,7 +19,9 @@
                     echo 'ingreso correctamente';	//mensaje en pantalla
                 }else{ //si los datos no son válidos
                     echo 'INGRESO INCORRECTO'; //mensaje en pantalla
-                }
+            }
+            else{
+                echo 'INGRESO INCORRECTO'; //prevenir submitir con campos vacios
             }          
         }
     ?> <!-- cierre del código PHP -->

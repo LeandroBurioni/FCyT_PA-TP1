@@ -3,14 +3,15 @@
 	
 	<head><!-- provee información general del documento-->
 	<!-- definimos el estilo del encabezado tipo h4-->
-		<style>
-			h4 {font-family: Arial ;color: white;background-color:#339999;border:2px solid black;font-weight: normal;text-align: center;}			
-		</style><!-- cierre de style -->
+		<link rel="stylesheet" href="css/estilos.css"><!-- cierre de style -->
 
 	</head> <!-- cierre del head -->
-
-		<h4><!-- todo lo que siga tendrá el estilo de encabezado h4 -->
-			Facultad de Ciencia y Tecnología <br>
-		</h4> <!-- cierre del encabezado h4 -->
-
+	<body>
+	 <div class="footer">
+		<a>Realizado por Rodrigo Richard y Leandro Burioni</a>
+		<br><br>
+		<!-- todo lo que siga tendrá el estilo de encabezado h4 -->
+			Facultad de Ciencia y Tecnología 
+	 </div> <!-- cierre del encabezado h4 -->
+	</body>
 </html> <!-- cierre del documento -->

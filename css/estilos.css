@@ -1,0 +1,28 @@
+.header {
+    font-family: arial; 
+    color: white; 
+    background-color:#339999; 
+    border:1px solid black; 
+    font-weight: normal;
+}
+
+.footer {
+    font-family: Arial ;
+    font-size: small;
+    color: white;
+    background-color:#339999;
+    border:2px solid black;
+    font-weight: normal;
+    text-align: center;}			
+
+#img_login{
+    width:50px;
+    height:50px;
+}
+
+.img_login_a{
+    width:28px;
+    height:25px;
+}
+
+
