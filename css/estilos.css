@@ -1,3 +1,17 @@
+.navbar{ 
+    background-color:#339999; 
+    border:1px solid black; 
+}
+
+.navbar > a{
+    color: white !important;
+    font-family: arial; 
+    font-weight: normal;    
+}
+.container{
+    min-width: 800px;
+    width: auto;
+}
 .header {
     font-family: arial; 
     color: white; 
@@ -11,7 +25,7 @@
     font-size: small;
     color: white;
     background-color:#339999;
-    border:2px solid black;
+    border:1px solid black;
     font-weight: normal;
     text-align: center;}			
 
