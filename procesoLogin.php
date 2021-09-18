@@ -1,6 +1,5 @@
 <?php 
-
-    	if ($_POST['bt_submit']){	//valido que se haya enviado el formulario
+    	if (!empty($_POST) && $_POST['bt_submit']){	//valido que se haya enviado el formulario
 		
             if (($_POST['usuario']!='')&&($_POST['contrasenia']!='')){//valido que las variables no vengan vacias
                 $usuarioValido="fcytuader"; //usuario válido
@@ -11,16 +10,24 @@
                     include('./includes/header.php');
                     echo 'ingreso correctamente';	//mensaje en pantalla
                     include('./includes/footer.php');
+
                 }else{ //si los datos no son válidos
-                    echo 'INGRESO INCORRECTO'; //mensaje en pantalla
-                    include('./login.php');
+                    include('./includes/header.php');
+                    echo "<div class='alert alert-danger' role='alert'>Ingreso Incorrecto!</div>"; //mensaje en pantalla
+                    include('./nologin.php');
+                    include('./includes/footer.php');
                 }}
             else{
-                echo 'INGRESO INCORRECTO'; //prevenir submitir con campos vacios
-                include('./login.php');
-                
+                include('./includes/header.php');
+                    echo "<div class='alert alert-danger' role='alert'>Ingreso Incorrecto!</div>"; //mensaje en pantalla
+                    include('./nologin.php');
+                    include('./includes/footer.php');
             }          
         }
+        else{ //si alguien entra a /procesoLogin.php sin logearse
+            include('./login.php');
+        }
+        
     ?> <!-- cierre del código PHP -->
 
     

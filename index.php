@@ -1,4 +1,5 @@
 		<?php include('includes/header.php'); ?> <!-- incluimos el archivo header-->
+		
 		<h2> Esta es la primer entrega del Trabajo Practico 1.</h2>
 		<a>Por el momento la unica funcionalidad disponible es iniciar sesion</a>
 		<div> <!-- formato encabezado tipo h2, este estilo lo podemos configurar, este es por defecto -->

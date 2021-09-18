@@ -19,7 +19,7 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark"> <!--  -->
     <a class="navbar-brand" href="./index.php">
         <img src="./imagenes/UADERlogo.png" alt="" width="150" height="auto" class="d-inline-block align-center">
-        <h1>Programación Avanzada 2021</h1>
+        <span>Programación Avanzada 2021</span>
     </a>
     <!-- Sin js no hay boton hamburguesa y menu colapsable.
 
@@ -27,6 +27,7 @@
         <span class="navbar-toggler-icon"></span>
     </button> 
     <div class="collapse navbar-collapse" id="navbarNav"> -->
+</br>
         <ul class="navbar-nav"> <!-- Para usar la class Active tambien necesitamos js-->
             <li class="nav-item">
                 <a class="nav-link" href="./index.php">Inicio</a>
