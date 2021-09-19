@@ -1,7 +1,6 @@
 	
 	<div class="footer">
-		<h3>Facultad de Ciencia y Tecnología</h3>
-		<br>
+		<h4>Facultad de Ciencia y Tecnología</h4>		
 		<a>Realizado por Rodrigo Richard y Leandro Burioni</a>
 	 </div>
 	 </div>

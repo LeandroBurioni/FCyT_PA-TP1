@@ -1,7 +1,6 @@
 		<?php include('includes/header.php'); ?>
 		
-		<a> Esta es la primer entrega del Trabajo Practico 1 - 2021.</h2>
-		<a>Por el momento la unica funcionalidad disponible es iniciar sesion</a>
+		<a class="texto"> Esta es la primer entrega del Trabajo Practico 1 - 2021</a>
 		<div> 
 			<img src="imagenes/login_a.png" id="img_login">
         	<a href="./login.php">Iniciar Sesión</a>

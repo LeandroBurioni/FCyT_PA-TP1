@@ -39,4 +39,8 @@
     height:25px;
 }
 
-
+.texto {
+color: blue;
+pointer-events: none;
+text-align: justify;
+}

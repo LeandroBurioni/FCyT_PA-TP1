@@ -18,7 +18,7 @@
 	 <!-- Barra de navegación -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark"> <!--  -->
     <a class="navbar-brand" href="./index.php">
-        <img src="./imagenes/UADERlogo.png" alt="" width="150" height="auto" class="d-inline-block align-center">
+        <img src="./imagenes/UADERlogo.png" alt="" width="150" height="auto" class="d-inline-block align-top">
         <span>Programación Avanzada 2021</span>
     </a>
     <!-- Sin js no hay boton hamburguesa y menu colapsable.
