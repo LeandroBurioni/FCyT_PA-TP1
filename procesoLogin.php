@@ -1,5 +1,5 @@
 <?php 
-    	if (!empty($_POST) && $_POST['bt_submit']){	//valido que se haya enviado el formulario
+    	if (!empty($_POST) && $_POST['bt_submit']){	//valido que se haya enviado el formulario y que no se encuentre vacio
 		
             if (($_POST['usuario']!='')&&($_POST['contrasenia']!='')){//valido que las variables no vengan vacias
                 $usuarioValido="fcytuader"; //usuario válido
@@ -28,6 +28,6 @@
             include('./login.php');
         }
         
-    ?> <!-- cierre del código PHP -->
+    ?>
 
     
