@@ -8,7 +8,7 @@
                 if(($_POST['usuario']==$usuarioValido)&&($_POST['contrasenia']==$contraseniaValido)){
                     //valido si las variables coinciden con los datos válidos
                     include('./includes/header.php');
-                    echo "<div class='alert alert-sucess' role='alert'>Ingreso Correcto!</div>"; //mensaje en pantalla
+                    echo "<div class='alert alert-success' role='alert'>Ingreso Correcto!</div>"; //mensaje en pantalla
                     include('./includes/footer.php');
 
                 }else{ //si los datos no son válidos
