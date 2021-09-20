@@ -41,6 +41,6 @@
 
 .texto {
 color: blue;
-/*pointer-events: none;*/
-text-align: justify;
+/*pointer-events: none;
+text-align: center;*/
 }
