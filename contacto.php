@@ -17,6 +17,6 @@
     <label for="message">Escriba su mensaje</label><br>
     <textarea name="mensaje_visitante" required cols=50></textarea>
   </div>
-  <button type="submit">Enviar mensaje</button>
+  <button type="submit" class="btn btn-secondary">Enviar mensaje</button>
 </form>
 <?php include('./includes/footer.php'); ?>
