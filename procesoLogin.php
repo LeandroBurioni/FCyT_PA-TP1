@@ -14,7 +14,7 @@ if (!empty($_POST['rand_code']) ){
                     //valido si las variables coinciden con los datos válidos
                     include('./includes/header.php');
                     echo "<div class='alert alert-success' role='alert'>Ingreso Correcto!</div>"; //mensaje en pantalla
-                    //cargar inicio.php
+                    //redirigir a inicio.php
                      
                     include('./includes/footer.php');
                 }else{ //si los datos no son válidos
@@ -31,11 +31,13 @@ if (!empty($_POST['rand_code']) ){
             }          
         }
     }else{
-        echo "En esta web no se permiten los ataques de inyeccion de codigo";
+        echo "Hubo un error en el captcha";
+        //redirigir a login
     }
 
 }
 else{
     echo "Estas aca xq no completaste el captcha.";
+    //redirigir a login
 }
     ?>
