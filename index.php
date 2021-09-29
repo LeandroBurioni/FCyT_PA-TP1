@@ -1,5 +1,7 @@
-		<?php include('includes/header.php'); ?>
-		
+		<?php 
+		session_start();
+		include('includes/header.php'); ?>
+		`
 		<span class="texto"> Esta es la primer entrega del Trabajo Practico 1 - 2021</span>
 		<div> 
 			<img src="imagenes/login_a.png" id="img_login">
