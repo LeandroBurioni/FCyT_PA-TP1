@@ -17,11 +17,11 @@ if (!empty($_POST['rand_code']) ){
                 if(($_POST['usuario']==$usuarioValido)&&($_POST['contrasenia']==$contraseniaValido)){
                     $_SESSION['usuario']=$_POST['usuario'];
                     //valido si las variables coinciden con los datos válidos
-                    include('./includes/header.php');
-                    echo "<div class='alert alert-success' role='alert'>Ingreso Correcto!</div>"; //mensaje en pantalla
-                    include('./inicio.php');
-                     
-                    include('./includes/footer.php');
+                    //include('./includes/header.php');
+                    //echo "<div class='alert alert-success' role='alert'>Ingreso Correcto!</div>"; //mensaje en pantalla
+                    //include('./inicio.php');
+                    header('Location: ./inicio.php');
+                    //include('./includes/footer.php');
                 }else{ //si los datos no son válidos
                     session_destroy();
                     include('./includes/header.php');

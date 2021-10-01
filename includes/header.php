@@ -17,7 +17,13 @@
 
 	 <!-- Barra de navegación -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark"> <!--  -->
-    <a class="navbar-brand" href="./index.php">
+    <a class="navbar-brand" href="
+    <?php if(!empty($_SESSION['usuario'])){
+                echo "./inicio.php";}//si hay una session abierta, redirige a inicio
+                else{
+                    echo "./index.php";//sino redirige a la landing
+                }?>
+    ">
         <img src="./imagenes/UADERlogo.png" alt="" width="150" height="auto" class="d-inline-block align-top">
         <span>Programación Avanzada 2021</span>
     </a>
@@ -33,10 +39,6 @@
                 echo "<li class='nav-item'>
                 <a class='nav-link'>Logeado como:";
                 echo $_SESSION['usuario']."</a></li>";
-            //    echo "<li class='nav-item'>
-            //<button type='submit' onclick=".session_destroy()." class='btn btn-secondary' formaction='./index.php'>Cerrar Sesion</button>
-            //</li>";
-
             }?>
             
             <li class="nav-item">

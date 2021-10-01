@@ -1,4 +1,9 @@
-<?php include('./includes/header.php'); ?>
+<?php 
+if(empty($_SESSION['usuario'])){
+  session_start();
+}
+
+include('./includes/header.php'); ?>
 
 <form action="contact.php" method="post">
   <div class="elem-group">
