@@ -31,14 +31,14 @@ $_SESSION['token']=$token;
 			<input type="text" class="form-control" value="" name="usuario" required>
 		</div>
 		<div class="form-group">
-			<label for="contrasenia">Contrasea:</label>
+			<label for="contrasenia">Contraseña:</label>
 			<input type="password" class="form-control" value="" name="contrasenia" required>
 		</div>
 		<div class="form-group">
 			<div class="div-captcha">
                 <label for="captcha">Código:</label>
                     <img src="includes/rdnimg.php" >
-                    <input type="text" class="form-control" name="rand_code" value="">
+                    <input type="text" class="form-control" name="rand_code" value="" required>
 			</div>
 		</div>
 		<div class="form-group">

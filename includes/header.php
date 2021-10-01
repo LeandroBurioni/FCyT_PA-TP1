@@ -29,9 +29,16 @@
     <div class="collapse navbar-collapse" id="navbarNav"> -->
 </br>
         <ul class="navbar-nav"> <!-- Para usar la class Active tambien necesitamos js-->
-            <li class="nav-item">
-                <a class="nav-link" href="./index.php">Inicio</a>
-            </li>
+            <?php if(!empty($_SESSION['usuario'])){
+                echo "<li class='nav-item'>
+                <a class='nav-link'>Logeado como:";
+                echo $_SESSION['usuario']."</a></li>";
+            //    echo "<li class='nav-item'>
+            //<button type='submit' onclick=".session_destroy()." class='btn btn-secondary' formaction='./index.php'>Cerrar Sesion</button>
+            //</li>";
+
+            }?>
+            
             <li class="nav-item">
                 <a class="nav-link" href="./login.php">Iniciar Sesion</a>
             </li>
