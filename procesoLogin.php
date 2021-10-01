@@ -1,7 +1,6 @@
 <?php 
 session_start();
 
-//Verificacion de CAPTCHA
 if (!empty($_POST['rand_code']) ){
     if ( $_POST['rand_code']==$_SESSION['rand_code'] ){ //Token valido, empieza validacion de datos del form
         if (!empty($_POST) && $_POST['bt_submit']){	//valido que se haya enviado el formulario y que no se encuentre vacio
@@ -19,6 +18,7 @@ if (!empty($_POST['rand_code']) ){
                     include('./includes/footer.php');
                 }else{ //si los datos no son válidos
                     include('./includes/header.php');
+                    session_destroy();
                     echo "<div class='alert alert-danger' role='alert'>Ingreso Incorrecto!</div>"; //mensaje en pantalla
                     include('./nologin.php');
                     include('./includes/footer.php');

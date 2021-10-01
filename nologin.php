@@ -42,8 +42,8 @@ $_SESSION['token']=$token;
 			</div>
 		</div>
 		<div class="form-group">
-			<button type="submit" class="btn btn-primary" name="bt_submit">Ingresar
-			<img style="width:28px;height:25px;" src="./imagenes/login_a.png"></button>
+			<input type="submit" class="btn btn-primary" name="bt_submit" value="Ingresar"/>
+			<!-- <img style="width:28px;height:25px;" src="./imagenes/login_a.png"></button> -->
 		</div>
 	</form>
 	</div>
