@@ -1,9 +1,6 @@
 <?php 
 
-if(empty($_SESSION)){
-    session_start();
-}
-
+session_start();
 
 //Verificacion de CAPTCHA
 if (!empty($_POST['rand_code']) ){
@@ -16,23 +13,19 @@ if (!empty($_POST['rand_code']) ){
                 
                 if(($_POST['usuario']==$usuarioValido)&&($_POST['contrasenia']==$contraseniaValido)){
                     $_SESSION['usuario']=$_POST['usuario'];
-                    //valido si las variables coinciden con los datos válidos
-                    //include('./includes/header.php');
-                    //echo "<div class='alert alert-success' role='alert'>Ingreso Correcto!</div>"; //mensaje en pantalla
-                    //include('./inicio.php');
                     header('Location: ./inicio.php');
-                    //include('./includes/footer.php');
+                    
                 }else{ //si los datos no son válidos
                     session_destroy();
                     include('./includes/header.php');
-                    echo "<div class='alert alert-danger' role='alert'>Usuario y/o contraseña incorrecta!</div>"; //mensaje en pantalla
+                    echo '<div class="alert alert-danger" role="alert">Usuario y/o contraseña incorrecta!</div>'; //mensaje en pantalla
                     include('./nologin.php');
                     include('./includes/footer.php');
                 }}
             else{
                 session_destroy();
                 include('./includes/header.php');// aca no llega nunca, los input son required
-                echo "<div class='alert alert-danger' role='alert'>Nunca llegamos a aca!</div>"; //mensaje en pantalla
+                echo '<div class="alert alert-danger" role="alert">Nunca llegamos a aca!</div>'; //mensaje en pantalla
                 include('./nologin.php');
                 include('./includes/footer.php');
             }          
@@ -41,17 +34,16 @@ if (!empty($_POST['rand_code']) ){
         //Hubo un error en el captcha
         session_destroy();
         include('./includes/header.php');
-        echo "<div class='alert alert-danger' role='alert'>Hubo un error en el captcha!</div>"; //mensaje en pantalla
+        echo '<div class="alert alert-danger" role="alert">Hubo un error en el captcha!</div>'; //mensaje en pantalla
         include('./nologin.php');
         include('./includes/footer.php');
     }
-
 }
 else{
     //no completaste el captcha
     session_destroy();
     include('./includes/header.php');
-    echo "<div class='alert alert-danger' role='alert'>No completaste el captcha!</div>"; //mensaje en pantalla
+    echo '<div class="alert alert-danger" role="alert">No completaste el captcha!</div>'; //mensaje en pantalla
     include('./nologin.php');
     include('./includes/footer.php');
 }

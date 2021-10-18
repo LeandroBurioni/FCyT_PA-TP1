@@ -1,18 +1,16 @@
 <!--Aca va un pagina de bienvenida a la que se llega despues de loguearse correctamente-->
 <?php 
-if(empty($_SESSION['usuario'])){
-    session_start();
-}
-include('./includes/header.php');
- ?>
+  session_start();
+ 
+  if (!isset($_SESSION['usuario'])) {
+    header('Location: ./index.php');
+  }  
+  else{    
+    include('./includes/header.php');
+  }
+ 
+   echo '<h1>Bienvenido '.$_SESSION['usuario'] .'</h1>' ;
 
-                    
-<h1>Bienvenido <?php echo $_SESSION['usuario'] ?>!</h1>
-
-
-<form action='./index.php'> 
-    <button onclick="<?php session_destroy() ?>" class='btn btn-secondary'>Cerrar Sesion</button>
-</form>
-
-<?php include('./includes/footer.php'); ?>
+  include('./includes/footer.php');
+?>
 
