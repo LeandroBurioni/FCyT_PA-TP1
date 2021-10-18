@@ -34,9 +34,19 @@
     height:50px;
 }
 
-.img_login_a{
-    width:28px;
-    height:25px;
+.img_index{
+    width:400px;
+    height:auto;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img_code{
+    width:100px;
+    height:auto;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .texto {

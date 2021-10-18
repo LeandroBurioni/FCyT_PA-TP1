@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+<script>
+
+</script>
 
     <head>
         <meta charset="UTF-8">
@@ -16,37 +19,44 @@
         <div class="container">
 
 	 <!-- Barra de navegación -->
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark"> <!--  -->
-    <a class="navbar-brand" href="
-    <?php if(!empty($_SESSION['usuario'])){
-                echo "./inicio.php";}//si hay una session abierta, redirige a inicio
-                else{
-                    echo "./index.php";//sino redirige a la landing
-                }?>
-    ">
-        <img src="./imagenes/UADERlogo.png" alt="" width="150" height="auto" class="d-inline-block align-top">
-        <span>Programación Avanzada 2021</span>
-    </a>
-    <!-- Sin js no hay boton hamburguesa y menu colapsable.
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+    <?php
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button> 
-    <div class="collapse navbar-collapse" id="navbarNav"> -->
-</br>
-        <ul class="navbar-nav"> <!-- Para usar la class Active tambien necesitamos js-->
-            <?php if(!empty($_SESSION['usuario'])){
-                echo "<li class='nav-item'>
-                <a class='nav-link'>Logeado como:";
-                echo $_SESSION['usuario']."</a></li>";
-            }?>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="./login.php">Iniciar Sesion</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./contacto.php">Contacto</a>
-            </li>
-        </ul>
-    <!-- </div> -->
+     if(isset($_SESSION['usuario'])){        
+        echo '
+        <a class="navbar-brand" href="./inicio.php">
+            <img src="./imagenes/UADERlogo.png" alt="" width="100" height="auto" class="d-inline-block align-top">
+            <span>Programación Avanzada 2021</span>
+        </a>';
+    }
+    else{
+        echo '
+        <a class="navbar-brand" href="./index.php">
+            <img src="./imagenes/UADERlogo.png" alt="" width="100" height="auto" class="d-inline-block align-top">
+            <span>Programación Avanzada 2021</span>
+        </a>';
+    }
+    ?>
+    
+    <ul class="navbar-nav"> <!-- Para usar la class Active tambien necesitamos js-->
+        <li class="nav-item">
+            <a class="nav-link" href="./contacto.php">Contacto</a>
+        </li>
+        <?php
+            if(isset($_SESSION['usuario'])){
+                echo '<li class="nav-item">
+                <a class="nav-link">Logueado como: ';
+                echo $_SESSION['usuario'].'</a></li>';
+                echo '<li class="nav-item">
+                <a class="btn btn-secondary" href="logout.php" role="button">Cerrar Sesión</a>
+                </li>';
+                
+            }
+            else{ 
+                echo '<li class="nav-item">
+                <a class="btn btn-primary" href="./login.php">Iniciar Sesion</a>
+                </li>';
+            }
+        ?>                       
+    </ul>    
 </nav>
