@@ -9,8 +9,11 @@
     include('./includes/header.php');
   }
  
-   echo '<h1>Bienvenido '.$_SESSION['usuario'] .'</h1>' ;
+  echo '<h1>Bienvenido '.$_SESSION['usuario'] .'</h1>' ;
+  ?>  
+  
+  <p>Gracias por confiar en nosotros y utilizar esta plataforma para aumentar tus ventas.</p>
+  <a>Pronto podras comenzar a publicar tus productos para que los clientes puedan verlos online.</a>
 
-  include('./includes/footer.php');
-?>
+  <?php include('./includes/footer.php'); ?>
 
