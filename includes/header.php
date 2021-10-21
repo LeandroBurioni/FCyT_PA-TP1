@@ -33,7 +33,7 @@
         </a>';
     }
     ?>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -41,9 +41,7 @@
         <li class="nav-item">
             <a class="nav-link" href="./tiendas.php">Tiendas</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./quienes-somos.php">Quienes somos?</a>
-        </li>
+        
         <?php
             if(isset($_SESSION['usuario'])){
                 echo '<li class="nav-item">
@@ -56,6 +54,9 @@
                     </li>';
             }
             else{ 
+                echo '<li class="nav-item">
+                <a class="nav-link" href="./quienes-somos.php">Quienes somos?</a> 
+            </li>';
                 echo '<li class="nav-item">
                 <a class="nav-link btn btn-primary" href="./login.php">Iniciar Sesion</a>
                 </li>';
