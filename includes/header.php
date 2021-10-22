@@ -2,14 +2,17 @@
 <html lang="es">
 
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Vitreaux: Feria Online</title>
         <link rel="icon" type="image/png" href="./imagenes/favicon.png">
 		<link rel="stylesheet" href="./css/estilos.css">
+        
         <!-- Bootstrap CSS & js -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   
     </head>
 
     <body>
@@ -21,15 +24,13 @@
      if(isset($_SESSION['usuario'])){        
         echo '
         <a class="navbar-brand" href="./inicio.php">
-            <img src="./imagenes/vidriera_sinfondo.png" alt="" width="100" height="auto" class="d-inline-block align-center">
-            <span>Vitreaux: Feria Online</span>
+            <img src="./imagenes/Logo3.png" alt="" width="200" height="auto" class="d-inline-block align-center">
         </a>';
     }
     else{
         echo '
         <a class="navbar-brand" href="./index.php">
-            <img src="./imagenes/vidriera_sinfondo.png" alt="" width="100" height="auto" class="d-inline-block align-center">
-            <span>Vitreaux: Feria Online</span>
+            <img src="./imagenes/Logo3.png" alt="" width="200" height="auto" class="d-inline-block align-center">
         </a>';
     }
     ?>
@@ -39,25 +40,26 @@
     <div class="collapse navbar-collapse" id="navbarNav">
      <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="./tiendas.php">Tiendas</a>
+            <a href="./tiendas.php">Tiendas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="./quienes-somos.php">Quienes somos?</a>
+            <a  href="./quienes-somos.php">Quienes somos?</a>
         </li>
         <?php
             if(isset($_SESSION['usuario'])){
                 echo '<li class="nav-item">
-                    <a class="nav-link" href="./cargarProducto.php">Cargar Producto</a>
+                    <a href="./cargarProducto.php">Cargar Producto</a>
                     </li>';
                 echo '<li class="nav-item">
-                <a>Logueado como: ';
+                <a class="user"> Usuario: ';
                 echo $_SESSION['usuario'].'</a>';
-                echo '<a class="nav-link btn btn-secondary" href="logout.php" role="button">Cerrar Sesión</a>
+                echo '<li class="nav-item">
+                <a href="logout.php" role="button">Cerrar Sesión</a>
                     </li>';
             }
             else{ 
                 echo '<li class="nav-item">
-                <a class="nav-link btn btn-primary" href="./login.php">Iniciar Sesion</a>
+                <a href="./login.php">Iniciar Sesion</a>
                 </li>';
             }
         ?>                       

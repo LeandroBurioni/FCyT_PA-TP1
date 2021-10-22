@@ -28,16 +28,19 @@ $_SESSION['token']=$token;
 			<input type="text" class="form-control" value="" name="usuario" placeholder="Usuario" required>
 		</div>
 		<div class="form-group">
-			<input type="password" class="form-control" value="" name="contrasenia" placeholder="Contraseña" required>
+			<input type="password" class="form-control" value="" name="contrasenia" placeholder="Contraseña" required><br>
 		</div>
 		<div class="form-group">
 			<div class="div-captcha">
                 <img class= "img_code" src="includes/rdnimg.php" ><br>
-                <input type="text" class="form-control" name="rand_code" placeholder="Escriba el código" value="" required>
+                <input type="text" class="form-control" name="rand_code" placeholder="Escriba el código" value="" required><br>
 			</div>
 		</div>
 		<div class="form-group">
-			<input type="submit" class="btn btn-primary" name="bt_submit" value="Ingresar" style="margin:0px auto; display:block;"/>			
+			<input type="submit" class="btn btn-primary" name="bt_submit" value="Ingresar" style="margin:0px auto; display:block;"/><br>			
+		</div>
+		<div style="text-align: center">
+		<a href="./registrate.php"> Crear cuenta</a>
 		</div>
 	</form>
 	</div>

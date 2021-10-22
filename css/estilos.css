@@ -1,12 +1,35 @@
-.navbar{ 
-    background-color: #119abf; 
+.navbar { 
+    background-color: teal;
     border:1px solid black; 
 }
-
+.titulo{
+    font: caption;
+    color: rgb(41, 81, 182) !important;
+    font-family: serif; 
+    font-weight: normal;  
+}
 .navbar > a{
-    color: white !important;
+    color: teal !important;
     font-family: arial; 
-    font-weight: normal;    
+    font-weight: normal;   
+     
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: teal;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.user {
+    color: rgb(41, 81, 182);
 }
 .bg-light{
     min-width: 800px;
@@ -14,17 +37,18 @@
 }
 .header {
     font-family: arial; 
-    color: white; 
-    background-color:#119abf; 
+    color: rgb(192, 17, 17); 
+    background-color:#2818b3; 
     border-bottom:1px solid black; 
     font-weight: normal;
+    
 }
 
 .footer {
     font-family: Arial ;
     font-size: small;
     color: white;
-    background-color:#119abf;
+    background-color:teal;
     border-top:1px solid black;
     font-weight: normal;
     text-align: center;}			
@@ -35,7 +59,7 @@
 }
 
 .img_index{
-    width:400px;
+    width:300px;
     height:auto;
     display: block;
   margin-left: auto;
@@ -54,7 +78,20 @@ color: blue;
 /*pointer-events: none;
 text-align: center;*/
 }
-
+.register-form {
+    width: 540px;
+    margin: 50px auto;
+  	font-size: 15px;
+}
+.register-form label{
+	width:150px;
+	font-weight:bold;
+	display:inline-block;
+}
+.register-form input{
+	width:250px;
+	display:inline-block;
+}
 .login-form {
     width: 340px;
     margin: 50px auto;

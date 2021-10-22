@@ -4,12 +4,12 @@
 
 include('./includes/header.php'); ?>
 
-<p> Somos Leandro Burioni y Rodrigo Richard, estudiantes en FCyT - UADER.</p>
-<p>Esta web es nuestro proyecto para la materia Programacion Avanzada de 3er ano de la carrera Lic en Sistemas de Informacion. </p>
+<p> Somos Leandro Burioni y Rodrigo Richard, estudiantes de la FCyT - UADER.</p>
+<p>Esta web es nuestro proyecto para la materia Programacion Avanzada de 3er año de la carrera Licenciatura en Sistemas de Información. </p>
 
-<p>Tu opinion nos interesa, hacenos llegar tus recomendaciones o inquietudes completando el siguente formulario.</p>
+<p>Tu opinión nos interesa, hacenos llegar tus recomendaciones o inquietudes completando el siguiente formulario.</p>
 
-<form action="#" method="post"> <!-- Completar la accion a llevar a cabo.-->
+<form class="register-form" action="#" method="post"> <!-- Completar la accion a llevar a cabo.-->
   <div class="elem-group">
     <label for="nombre_visitante">Nombre completo</label>
     <input type="text" name="nombre_visitante" placeholder="Ej: José Paz" pattern=[A-Z\sa-z]{3,20} required>

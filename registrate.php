@@ -4,7 +4,7 @@
 
 include('./includes/header.php'); ?>
 
-<form action="" method="post">
+<form class="register-form" action="" method="post">
   <div class="elem-group">
     <label for="name">Nombre de la tienda</label>
     <input type="text" name="nombre_tienda" placeholder="Ej: Todo por 2 pesos" pattern=[A-Z\sa-z]{3,20} required>
@@ -15,15 +15,17 @@ include('./includes/header.php'); ?>
   </div>
   
   <div class="elem-group">
-    <label for="password">Contrasena</label>
+    <label for="password">Contraseña</label>
     <input type="password" name="password" required>
   </div>
 
   <div class="elem-group">
-    <label for="password2">Repita su contrasena</label>
+    <label for="password2">Repita su contraseña</label>
     <input type="password" name="password2" required>
   </div>
-
-  <button type="submit" class="btn btn-secondary">Empezar a vender</button>
+  <br>
+  <div style="text-align: center">
+  <button type="submit" class="btn btn-secondary">Registrarse</button>
+  </div>
 </form>
 <?php include('./includes/footer.php'); ?>
