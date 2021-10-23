@@ -11,9 +11,9 @@
 .navbar > a{
     color: teal !important;
     font-family: arial; 
-    font-weight: normal;   
-     
+    font-weight: normal;  
 }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -28,8 +28,12 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
+
+li a:hover{
+    color : yellow !important;
+}
 .user {
-    color: rgb(41, 81, 182);
+    color: yellow;
 }
 .bg-light{
     min-width: 800px;
@@ -51,7 +55,9 @@ li a {
     background-color:teal;
     border-top:1px solid black;
     font-weight: normal;
-    text-align: center;}			
+    text-align: center;
+    position: sticky;    
+}			
 
 #img_login{
     width:50px;
@@ -73,11 +79,6 @@ li a {
   margin-right: auto;
 }
 
-.texto {
-color: blue;
-/*pointer-events: none;
-text-align: center;*/
-}
 .register-form {
     width: 540px;
     margin: 50px auto;
@@ -110,3 +111,4 @@ text-align: center;*/
     min-height: 38px;
     border-radius: 2px;
 }
+
