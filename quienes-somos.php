@@ -1,9 +1,8 @@
 <?php 
- 
+ require_once './includes/Page.php';
   session_start();
 
-include('./includes/header.php'); ?>
-
+  $body='
 <p> Somos Leandro Burioni y Rodrigo Richard, estudiantes de la FCyT - UADER.</p>
 <p>Esta web es nuestro proyecto para la materia Programacion Avanzada de 3er año de la carrera Licenciatura en Sistemas de Información. </p>
 
@@ -27,6 +26,12 @@ include('./includes/header.php'); ?>
     <textarea name="mensaje_visitante" required cols=50 rows=5></textarea>
   </div>
   <button type="submit" class="btn btn-secondary">Enviar mensaje</button>
-</form>
+</form>';
 
-<?php include('./includes/footer.php'); ?> 
+$oPage=new Page();
+
+      $oPage->setBody($body);
+
+    echo $oPage->getHtml();
+
+    ?>

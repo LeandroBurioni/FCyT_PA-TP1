@@ -1,9 +1,8 @@
 <?php 
- 
+ require_once './includes/Page.php';
   session_start();
 
-include('./includes/header.php'); ?>
-
+$body='
 <form class="register-form" action="" method="post">
   <div class="elem-group">
     <label for="name">Nombre de la tienda</label>
@@ -27,5 +26,13 @@ include('./includes/header.php'); ?>
   <div style="text-align: center">
   <button type="submit" class="btn btn-secondary">Registrarse</button>
   </div>
-</form>
-<?php include('./includes/footer.php'); ?>
+</form>';
+
+
+$oPage=new Page();
+
+      $oPage->setBody($body);
+
+    echo $oPage->getHtml();
+    
+    ?>
