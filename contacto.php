@@ -1,9 +1,9 @@
 <?php 
- 
+  require_once './includes/Page.php';
   session_start();
 
-include('./includes/header.php'); ?>
 
+$body='
 <form action="contact.php" method="post">
   <div class="elem-group">
     <label for="name">Nombre completo</label>
@@ -22,5 +22,11 @@ include('./includes/header.php'); ?>
     <textarea name="mensaje_visitante" required cols=50 rows=5></textarea>
   </div>
   <button type="submit" class="btn btn-secondary">Enviar mensaje</button>
-</form>
-<?php include('./includes/footer.php'); ?>
+</form>';
+
+
+$oPage=new Page();
+$oPage->setBody($body);
+echo $oPage->getHtml();
+
+?>

@@ -1,10 +1,9 @@
 <?php 
- 
+require_once './includes/Page.php';
+  // Transformar esta pagina en una que sea para cargar los productos
   session_start();
 
-include('./includes/header.php'); ?>
-
-<!-- Transformar esta pagina en una que sea para cargar los productos. -->
+$body='
 <form action="" method="post">
   <div class="elem-group">
     <label for="name">Nombre completo</label>
@@ -23,5 +22,10 @@ include('./includes/header.php'); ?>
     <textarea name="mensaje_visitante" required cols=50 rows=5></textarea>
   </div>
   <button type="submit" class="btn btn-secondary">Enviar mensaje</button>
-</form>
-<?php include('./includes/footer.php'); ?>
+</form>';
+$oPage=new Page();
+
+      $oPage->setBody($body);
+
+    echo $oPage->getHtml();
+    ?>

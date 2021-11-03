@@ -1,8 +1,8 @@
 <?php 
- 
+ require_once './includes/Page.php';
   session_start();
 
-include('./includes/header.php'); ?>
+$body='
 
 <div class="container">
     <div class="row">
@@ -32,6 +32,12 @@ include('./includes/header.php'); ?>
         </div>
     </div>
 
-</div>
+</div>';
 
-<?php include('./includes/footer.php'); ?>
+$oPage=new Page();
+
+      $oPage->setBody($body);
+
+    echo $oPage->getHtml();
+
+?>
