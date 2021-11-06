@@ -1,17 +1,14 @@
-<?php
-	session_start();
-	require_once './includes/Page.php';
-	if (isset($_SESSION['infoTienda'])) {	//Si esta logeado, redirigir a inicio.php
-		header('Location: ./inicio.php');
-	}
-	else{
-	$body='<h2>Bienvenido a VITRAUX la feria online!</h2>
-	<p>El lugar donde podras encontrar los productos que necesitas, al mejor precio y ponerte en contacto directo con los vendedores.</p>
-	<p>
-		Para comenzar a publicar tus productos, <a href="./registrate.php">registrate haciendo click aqui!</a> 
-	</p>
+<?php 
+  require_once './includes/Page.php';
+  session_start();
+  include_once "./includes/modelProductos.php";
+  //print_r($_SESSION['infoTienda']);
+  $productos = new productos;
+  $allProd = $productos->getProductos_Tienda($_SESSION['infoTienda']['id_user']);
+  print_r($allProd);
+$body='
 
-		<div class="flex-container">
+<div class="flex-container">
 			<div class="card mb-4 shadow-sm border">
              <div class="card-body">
 			 	<big>Nombre Tienda</big><br>
@@ -28,14 +25,12 @@
              </div>
             </div>
 
-		</div>
-		
-	<img class= "img_index" src="./imagenes/catalogo.png" alt="Imagen Decorativa">	';
+		</div>';
 
 $oPage=new Page();
 
       $oPage->setBody($body);
 
     echo $oPage->getHtml();
-}
-	?>
+
+?>

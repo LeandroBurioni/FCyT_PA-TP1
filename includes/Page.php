@@ -35,7 +35,7 @@ class Page{
 
     private function setMenu(){
         $this->menu='<nav class="navbar navbar-expand-lg navbar-dark">';
-        if(isset($_SESSION['usuario'])){        //Si es inicio sesion, redirigir a inicio.php
+        if(isset($_SESSION['infoTienda'])){        //Si inicio sesion, redirigir a inicio.php
             $this->menu.='<a class="navbar-brand" href="./inicio.php">
                 <img src="./imagenes/Logo3.png" alt="Logo Feria Online" width="200" height="auto" class="d-inline-block align-center">
                 </a>';
@@ -51,18 +51,19 @@ class Page{
         <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="./tiendas.php">Tiendas</a>
-            </li>
-            <li class="nav-item">
                 <a  href="./quienes-somos.php">Quienes somos?</a>
             </li>';
-        if(isset($_SESSION['usuario'])){
-            $this->menu.='<li class="nav-item">
+        if(isset($_SESSION['infoTienda'])){
+            $this->menu.='
+                        <li class="nav-item">
+                            <a href="./mi_tienda.php">Mis Productos</a>
+                        </li>
+                        <li class="nav-item">
                         <a href="./cargarProducto.php">Cargar Producto</a>
                         </li>
                         <li class="nav-item">
                     <a class="user"> Usuario: ';
-                    $this->menu.=$_SESSION['usuario'].'</a>
+                    $this->menu.=$_SESSION['infoTienda']['username'].'</a>
                     <li class="nav-item">
                     <a href="logout.php" role="button">Cerrar Sesión</a>
                         </li>';
@@ -105,4 +106,4 @@ class Page{
     }
 
 
-}//Fin de class Page
+}
