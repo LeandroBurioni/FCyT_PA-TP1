@@ -23,7 +23,8 @@
   </div>
   <div class="elem-group">
     <label for="mensaje_visitante">Escriba su mensaje</label><br>
-    <textarea name="mensaje_visitante" required cols=50 rows=5></textarea>
+    <textarea name="mensaje_visitante" required cols=50 rows=5
+    placeholder="Perdon, esto todavia no funciona. Por favor, un poco de paciencia. Apenas terminemos de rendir, arreglaremos todo!"></textarea>
   </div>
   <button type="submit" class="btn btn-secondary">Enviar mensaje</button>
 </form>';
