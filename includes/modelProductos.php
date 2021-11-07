@@ -39,14 +39,14 @@ class productos{
     }
 
     public function delete($id_prod){
-        $sql="DELETE FROM productos WHERE id_producto=".$id_prod."LIMIT 1";
-        $this->mysqli->query($sql);
+        $sql="DELETE FROM productos WHERE id_producto=".$id_prod;
+        return ($this->mysqli->query($sql));  
         $this->mysqli->close();
     }
 
     public function update($id_prod, $titulo, $descripcion, $precio){
-        $sql="UPDATE productos SET titulo=".$titulo.", descripcion=".$descripcion.", precio=".$precio." WHERE id_prod=".$id_prod;
-        $this->mysqli->query($sql);
+        $sql='UPDATE productos SET titulo="'.$titulo.'", descripcion="'.$descripcion.'", precio='.$precio.' WHERE id_producto='.$id_prod;
+        return ($this->mysqli->query($sql));
         $this->mysqli->close();
     }
 
@@ -77,7 +77,7 @@ class productos{
         $this->mysqli->close();
     }
 
-    public function getall(){
+    public function getall(){//Devuelve todos los productos
         $sql = "SELECT * FROM productos";
         if ( $resultado = $this->mysqli->query($sql) ){
 			if ( $resultado->num_rows > 0 ){

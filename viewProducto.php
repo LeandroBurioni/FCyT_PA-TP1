@@ -1,11 +1,11 @@
 <?php 
 require_once './includes/Page.php';
-  // Transformar esta pagina en una que sea para cargar los productos
+  //Esta vista es para cargar o modificar productos
   session_start();
 
-if($_GET["cargarProducto"]){
+if($_GET["opt"]=='cargar'){
 $body='
-<form class="register-form" action="procesoCargarProd.php" method="post">
+<form class="register-form" action="procesoProducto.php?opt=cargar" method="post">
   <div class="elem-group">
     <label for="prod_name">Nombre producto</label>
     <input type="text" name="prod_name" placeholder="Ej: Velas Artesanales" pattern=[A-Z\sa-z]{3,20} required>
@@ -21,24 +21,25 @@ $body='
   <button type="submit" class="btn btn-secondary">Enviar mensaje</button>
 </form>';
 }
-
-if($_GET["modificarProducto"]){
+elseif($_GET["opt"] == 'modificar'){
+    
     include_once "./includes/modelProductos.php";
     $prod= new productos;
-    $prod->getProducto_ID($_GET["id_prod"]);
-  $body='
-  <form class="register-form" action="procesoCargarProd.php" method="post">
+    $resultado = $prod->getProducto_ID($_GET["id_prod"]);
+    
+
+  $body='<form class="register-form" action="procesoProducto.php?opt=modificar&id_prod='.$_GET["id_prod"].'" method="post">
     <div class="elem-group">
       <label for="prod_name">Nombre producto</label>
-      <input type="text" name="prod_name" value='.$prod["titulo"].'>
+      <input type="text" name="prod_name" value='.$resultado["titulo"].'>
     </div>
     <div class="elem-group">
       <label for="prod_desc">Descripcion</label>
-      <input type="text" name="prod_desc" value='.$prod["descripcion"].'>
+      <input type="text" name="prod_desc" value='.$resultado["descripcion"].'>
     </div>
     <div class="elem-group">
       <label for="precio">Precio por unidad</label>
-      <input type="number" name="precio" value='.$prod["precio"].'>
+      <input type="number" name="precio" value='.$resultado["precio"].'>
     </div>
     <button type="submit" class="btn btn-secondary">Enviar mensaje</button>
   </form>';

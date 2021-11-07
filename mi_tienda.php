@@ -35,7 +35,7 @@
 				   <small class="text-muted">'.$p["datetime"].'</small>
 				</div>
 			      </div>
-            <a class="btn btn-primary">Modificar</a><button class="btn btn-secondary">Eliminar</button> $productos->delete($p["id_producto"])
+            <a href="viewProducto.php?opt=modificar&id_prod='.$p["id_producto"].'" class="btn btn-primary">Modificar</a><a href="procesoProducto.php?opt=eliminar&id_prod='.$p["id_producto"].'" class="btn btn-secondary">Eliminar</a>
 		      </div>';
 	}
 	$body.='</div>';
