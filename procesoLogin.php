@@ -28,10 +28,7 @@ if (!empty($_POST['rand_code']) ){
                 }else{ //si los datos no son válidos
                     session_destroy();
                     //header('Location: ./index.php');
-                    include('./includes/header.php');
-                    echo '<div class="alert alert-danger" role="alert">Usuario y/o contraseña incorrecta!</div>'; //mensaje en pantalla
-                    include('./nologin.php');
-                    include('./includes/footer.php');
+
                 }}
             else{
                 session_destroy();
