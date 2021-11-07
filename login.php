@@ -8,19 +8,15 @@ require_once './includes/Page.php';
 	}else{
 
 
-		if (!isset($_SESSION['rand_code']) )
-		{
+		if (!isset($_SESSION['rand_code']) ){
 		  unset($_SESSION['rand_code']);
 		}
 		
 		$token = "";
-		
 		$a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		
 		$length = 20;
 		
-		for ($i = 0; $i < $length; $i++)
-		{
+		for ($i = 0; $i < $length; $i++){
 			$token.= $a{rand(0, 61)};
 		}
 		
@@ -53,8 +49,8 @@ require_once './includes/Page.php';
 	</div>
 	<br>';
 
-		$oPage=new Page();
-      $oPage->setBody($body);
+	$oPage=new Page();
+    $oPage->setBody($body);
     echo $oPage->getHtml();
 	}
 ?>

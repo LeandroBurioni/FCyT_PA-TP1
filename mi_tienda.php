@@ -2,47 +2,45 @@
   require_once './includes/Page.php';
   session_start();
   include_once "./includes/modelProductos.php";
-  //print_r($_SESSION['infoTienda']);
+ 
   $productos = new productos;
-  $allProd = $productos->getProductos_Tienda($_SESSION['infoTienda']['id_user']);
- // print_r($allProd);
+  $myProd = $productos->getProductos_Tienda($_SESSION['infoTienda']['id_user']);
   
-        
-        $resultado = $productos->getall();
-$filas='';
+         $filas=array();;
 
-         // $fila = mysqli_fetch_assoc($allProd);
+      while ( $producto = $myProd->fetch_assoc() ){
+         $ArrayProd = array();
+			$ArrayProd['id_producto'] = $producto["id_producto"];	
+         $ArrayProd['titulo'] = $producto["titulo"];
+         $ArrayProd['descripcion'] = $producto["descripcion"];
+         $ArrayProd['precio'] = $producto["precio"];
+         $ArrayProd['datetime'] = $producto["datetime"];
+         $ArrayProd['id_user'] = $producto["id_user"];
 
-      while ( $producto = $allProd->fetch_assoc() ) 
-      {
-         $filas.='<tr>';
-            $filas.='<td scope="row">'.$producto["titulo"].'</td>';
-            $filas.='<td>'.$producto["descripcion"].'</td>';
-            $filas.='<td>'.$producto["precio"].'</td>';
-            '<td><a href="index.php?opt=edit&idPersona='.$producto["id_user"].'" class="btn btn-outline-warning btn-sm">editar</a></td>';
-            '<td><a href="index.php?opt=delete&idPersona='.$producto["id_user"].'" class="btn btn-outline-danger btn-sm">borrar</a></td>';
-         $filas.='</tr>';
-
+         array_push($filas, $ArrayProd);
       }
    
-   //else{
-     // $filas='<tr><td colspan="7">No existen datos que mostrar</td></tr>';
-   //}
- 
-   $body = '<table class="table table-striped">
-               <thead>
-                  <tr>
-                  <th scope="col">titulo</th>   
-                  <th scope="col">descripcion</th>                     
-                     <th scope="col">precio</th>  
-                     <th scope="col"></th>
-                     <th scope="col"></th>
-                  </tr>
-               </thead>
-               <tbody>'.$filas.'</tbody>
-            </table>';
+   $body = '<p>Aca podras modificar y eliminar tus productos cargados..</p>
+   <div class="flex-container">';
 
+   foreach($filas as $p){
+		$body.='<div class="card mb-4 shadow-sm border">
+					<div class="card-body">
+					 <big><strong>'.$p['titulo'].'</strong></big>	
+					 <p class="card-text">
+                    <text class="descripcion">'.$p['descripcion'].'</text><br>    
+                    <medium class="price"> $'.$p['precio'].'</medium> 
+                </p>
+				<div class="d-flex justify-content-between align-items-center">
+				   <small class="text-muted">'.$p["datetime"].'</small>
+				</div>
+			      </div>
+            <a class="btn btn-primary">Modificar</a><button class="btn btn-secondary">Eliminar</button> $productos->delete($p["id_producto"])
+		      </div>';
+	}
+	$body.='</div>';
 
+   
 $oPage=new Page();
 
       $oPage->setBody($body);
