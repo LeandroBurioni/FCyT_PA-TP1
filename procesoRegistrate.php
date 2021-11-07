@@ -5,7 +5,7 @@ if(!isset($_SESSION)){ //Si no hay sesion iniciarla
 	} 
 
 
-include_once "./includes/model.php";
+include_once ("./includes/modelUsuarios.php");
 
 if ( $_POST['password'] == $_POST['password2'] ){
     $registrar= new usuarios;

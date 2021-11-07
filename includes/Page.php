@@ -62,8 +62,8 @@ class Page{
                         <a href="./cargarProducto.php">Cargar Producto</a>
                         </li>
                         <li class="nav-item">
-                    <a class="user"> Usuario: ';
-                    $this->menu.=$_SESSION['infoTienda']['username'].'</a>
+                    <a class="user" href="./opcionesUsuario.php"> Usuario: ';
+                    $this->menu.=$_SESSION['infoTienda']['username'].' </a>
                     <li class="nav-item">
                     <a href="logout.php" role="button">Cerrar Sesión</a>
                         </li>';

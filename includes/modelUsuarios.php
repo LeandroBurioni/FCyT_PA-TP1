@@ -54,7 +54,7 @@ class usuarios{
                 $this->email = $fila['email'];
                 $this->nombre_tienda = $fila['nombre_tienda'];
                 $this->descripcion_tienda = $fila['descripcion_tienda'];
-                $this->telefono = $fila['telefono'];
+                $this->telefono = $fila['telefono'];                
                 return true;
 		}else{
                 return false;
@@ -75,11 +75,18 @@ class usuarios{
             'email'=> $this->email,
             'telefono'=> $this->telefono,
             'nombre_tienda'=>$this->nombre_tienda,
-            'descripcion_tienda'=>$this->descripcion_tienda
+            'descripcion_tienda'=>$this->descripcion_tienda,            
         );
         return $tienda;
     }
+    
+    public function update()
+    {
+        $sql="UPDATE usuarios SET  telefono='".$this->telefono."' WHERE idPersona=".$id_user; 
+        $this->mysqli->query($sql);
+           $this->mysqli->close();
 
+    }
 /*   PARA MEJORAR: Funcion para retornar todas las tiendas existentes y luego poder mostrar los productos de cada tienda por separado
 
 public function getallTiendas(){

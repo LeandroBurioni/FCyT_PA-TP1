@@ -43,15 +43,55 @@ class productos{
 
     public function getProductos_Tienda($user_id){
         $sql = "SELECT * FROM productos WHERE id_user=".$user_id;
-        if ( $data = $this->mysqli->query($sql) ){
-            $array = array();
-            while($result = mysqli_fetch_array($data)){
-                $array[] =$result;
+        
+        if ( $resultado = $this->mysqli->query($sql) )
+		{
+			if ( $resultado->num_rows > 0 )
+ 			{
+                 return $resultado;
+			}else{
+                return false;
             }
-            return $array;
+
         }
-        else return false;
+        
+        unset($resultado);
+		  
+        $this->mysqli->close();
+        
+        
+        
+     //   if ( $data = $this->mysqli->query($sql) ){
+       //     $array = array();
+         //   while($result = mysqli_fetch_array($data)){
+           //     $array[] =$result;
+            //}
+            //return $array;
+       // }
+        //else return false;
     }
+    public function getall()
+    {
+
+        $sql = "SELECT * FROM productos";
+
+        if ( $resultado = $this->mysqli->query($sql) )
+		{
+			if ( $resultado->num_rows > 0 )
+ 			{
+                 return $resultado;
+			}else{
+                return false;
+            }
+
+        }
+        
+        unset($resultado);
+		  
+        $this->mysqli->close();
+        
+    }
+
 
 }
 
