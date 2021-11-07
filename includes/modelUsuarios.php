@@ -46,9 +46,9 @@ class usuarios{
     public function autenticate($us, $pw){
         $query="SELECT * FROM usuarios WHERE username='".$us."' AND password='".$pw."'";
         if ( $resultado = $this->mysqli->query($query) ){
-                // setea todos los valores en la clase
+            
                 $fila = mysqli_fetch_assoc($resultado);
-                //print_r($fila);
+                
                 $this->id_user = $fila['id_user'];
                 $this->username = $fila['username'];
                 $this->email = $fila['email'];
@@ -61,6 +61,17 @@ class usuarios{
         }
     }
 
+    public function getTelefono($id_user){
+        $query="SELECT telefono FROM usuarios WHERE id_user=".$id_user;
+        if ( $resultado = $this->mysqli->query($query) ){
+            
+                $fila = mysqli_fetch_assoc($resultado);
+                return $fila['telefono'];                ;
+		}else{
+                return false;
+        }
+    }
+
     public function save(){
         $sql="INSERT INTO usuarios(username, password, email, nombre_tienda, descripcion_tienda,telefono) VALUES 
             ('".$this->username."','".$this->password."','".$this->email."','".$this->nombre_tienda."','".$this->descripcion_tienda."',".$this->telefono.")";
@@ -68,7 +79,7 @@ class usuarios{
         $this->mysqli->close();
     }
 
-    public function get_InfoTienda(){
+    public function get_InfoTienda(){ //Devuelve un arreglo con los atributos de la clase, pero sin hacer consulta a la DB. 
         $tienda=array(
             'id_user' => $this->id_user,
             'username'=> $this->username,
@@ -82,7 +93,7 @@ class usuarios{
     
     public function update()
     {
-        $sql="UPDATE usuarios SET  telefono='".$this->telefono."' WHERE idPersona=".$id_user; 
+        $sql="UPDATE usuarios SET telefono='".$this->telefono."' WHERE idPersona=".$id_user; 
         $this->mysqli->query($sql);
            $this->mysqli->close();
 

@@ -59,7 +59,7 @@ class Page{
                             <a href="./mi_tienda.php">Mis Productos</a>
                         </li>
                         <li class="nav-item">
-                        <a href="./cargarProducto.php">Cargar Producto</a>
+                        <a href="./viewProducto.php?opt=cargar">Cargar Producto</a>
                         </li>
                         <li class="nav-item">
                     <a class="user" href="./opcionesUsuario.php"> Usuario: ';
