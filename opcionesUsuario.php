@@ -1,44 +1,37 @@
 <?php
- require_once './includes/Page.php';
-
-if(!isset($_SESSION)){ //Si no hay sesion iniciarla
-    session_start();
-    $username=$_SESSION['infoTienda']['username'];
-    $telefono=$_SESSION['infoTienda']['telefono'];
-    $correo=$_SESSION['infoTienda']['email'];
-    $nombre_tienda=$_SESSION['infoTienda']['nombre_tienda'];
-    $descripcion_tienda=$_SESSION['infoTienda']['descripcion_tienda'];
+ if(!isset($_SESSION)){ //Si no hay sesion iniciarla
+  session_start();
 } 
+ require_once './includes/Page.php';
+ include_once "./includes/modelUsuarios.php";
 
+if(!isset($_SESSION['infoTienda'])){ //Si no hay sesion iniciarla
+  header('Location: ./index.php');    
+} 
+if (!isset($_SESSION['tiempo'])) {
+  $_SESSION['tiempo']=time();
+}
+else if (time() - $_SESSION['tiempo'] > 120) {
+  session_destroy();
+  header("Location: ./index.php");
+}
+$_SESSION['tiempo']=time();
+    $user = new usuarios;
+    $id_user=$_SESSION['infoTienda']['id_user'];
+    $user_info= $user->getInfo_ID($id_user);
+    $nombre_tienda=$user_info['nombre_tienda'];
 
-$body='
-<form class="register-form" action="./includes/modificarUsuario.php" method="post">
-  <div class="elem-group">
-    <label for="username">Nombre de Usuario</label>
-    <input type="text" name="username" value="'.$username.'"pattern="[A-Za-z0-9]{1,50}" >
-  </div>
-  <div class="elem-group">
-    <label for="telefono">Telefono</label>
-    <input type="tel" name="telefono" value="'.$telefono.'" >
-  </div>
-  <div class="elem-group">
-    <label for="email">E-mail</label>
-    <input type="email" name="email" value="'.$correo.'" >
-  </div>
-  <div class="elem-group">
-    <label for="nombre_tienda">Nombre de la tienda</label>
-    <textarea name="descripcion_tienda" row="2" maxlenght="25">'.$nombre_tienda.'</textarea>
-  </div>
-  <div class="elem-group">
-    <label for="descripcion_tienda">Descripcion de la tienda</label>
-    <textarea name="descripcion_tienda" maxlenght="200">'.$descripcion_tienda.'</textarea>
-  </div>
-  <div style="text-align: center">
-  <button name ="modificar" type="submit"  class="btn btn-secondary">Modificar</button>
-  </div>
-</form>';
-
-
+$body='	 <div class="centrado">
+           <div class="card-header">
+             Opciones de usuario
+           </div>
+           <div class="card-body">
+             <h5 class="card-title">'.$nombre_tienda.'</h5>
+             <a style="text-align:center" href="viewUsuario.php?opt=modificar_datos&id_user='.$id_user.'" class="btn btn-primary">Modificar datos</a>
+             <a href="viewUsuario.php?opt=modificar_pass&id_user='.$id_user.'" class="btn btn-primary">Modificar contraseña</a>
+             <a href="procesoUsuario.php?opt=eliminar&id_user='.$id_user.'" class="btn btn-secondary">Eliminar</a>
+           </div>           
+         </div>';
 $oPage=new Page();
 
       $oPage->setBody($body);

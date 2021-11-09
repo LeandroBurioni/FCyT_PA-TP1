@@ -1,12 +1,12 @@
 <?php 
 require_once './includes/Page.php';
+
 	if(!isset($_SESSION)){ //Si no hay sesion iniciarla
     	session_start();
 	} 
-	if (isset($_SESSION['usuario'])) { //Si esta logeado, redirigir a inicio.php
+	if (isset($_SESSION['infoTienda'])) { //Si esta logeado, redirigir a inicio.php
 		header('Location: ./inicio.php');
 	}else{
-
 
 		if (!isset($_SESSION['rand_code']) ){
 		  unset($_SESSION['rand_code']);
@@ -21,8 +21,7 @@ require_once './includes/Page.php';
 		}
 		
 		$_SESSION['token']=$token;
-			
-	
+
 	$body='<br>
 	<div class="login-form">
 	<form action="procesoLogin.php" method="POST">
@@ -40,7 +39,7 @@ require_once './includes/Page.php';
 			</div>
 		</div>
 		<div class="form-group">
-			<input type="submit" class="btn btn-primary" name="bt_submit" value="Ingresar" style="margin:0px auto; display:block;"/><br>			
+			<input type="submit" class="btn btn-primary" name="bt_submit" value="Ingresar" style="margin:0px auto; display:block; required"/><br>			
 		</div>
 		<div style="text-align: center">
 		<a href="./registrate.php"> Crear cuenta</a>

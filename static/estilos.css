@@ -54,7 +54,9 @@ li a:hover{
     border-top:1px solid black;
     font-weight: normal;
     text-align: center;
-    position: sticky;    
+    position: fixed;
+    width: 100%;
+    bottom: 0px;    
 }			
 
 .img_index{
@@ -114,4 +116,8 @@ li a:hover{
 .card{
     width: 300px;
     margin: 5px;
+}
+.centrado{
+    text-align: center;
+
 }

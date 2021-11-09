@@ -1,4 +1,15 @@
 <?php 
+
+   if (!isset($_SESSION['tiempo'])) {
+      $_SESSION['tiempo']=time();
+    }
+    else if (time() - $_SESSION['tiempo'] > 120) {
+      session_destroy();
+      header("Location: ./index.php");
+      die();  
+    }
+    $_SESSION['tiempo']=time();
+
   require_once './includes/Page.php';
   session_start();
   include_once "./includes/modelProductos.php";
@@ -6,8 +17,8 @@
   $productos = new productos;
   $myProd = $productos->getProductos_Tienda($_SESSION['infoTienda']['id_user']);
   
-         $filas=array();;
-
+         $filas=array();
+if(!empty($myProd)){
       while ( $producto = $myProd->fetch_assoc() ){
          $ArrayProd = array();
 			$ArrayProd['id_producto'] = $producto["id_producto"];	
@@ -39,7 +50,10 @@
 		      </div>';
 	}
 	$body.='</div>';
-
+}
+else{
+   $body = '<p>Ir a <a href="viewProducto.php?opt=cargar">Cargar Productos</a> para hacer tu primera publicación</p>';
+}
    
 $oPage=new Page();
 

@@ -1,7 +1,8 @@
 <?php 
   require_once './includes/Page.php';
-  session_start();
-
+  if(!isset($_SESSION)){ //Si no hay sesion iniciarla
+    session_start();
+} 
 
 $body='
 <form action="contact.php" method="post">

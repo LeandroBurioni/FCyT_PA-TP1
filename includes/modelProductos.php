@@ -12,7 +12,7 @@ class productos{
     private $mysqli;
 
     public function __construct(){
-        $this->mysqli = new mysqli('127.0.0.1', 'root', '', 'grupo1'); //inicializo
+        $this->mysqli = new mysqli('127.0.0.1', 'root', '', 'grupo1');
 	}
 
     public function set_titulo($titulo){

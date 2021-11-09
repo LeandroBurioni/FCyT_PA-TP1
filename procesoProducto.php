@@ -1,10 +1,20 @@
 <?php
+	session_start();
+//if(!isset($_SESSION)){ //Si no hay sesion iniciarla
+  //  
+//	} 
 
-if(!isset($_SESSION)){ //Si no hay sesion iniciarla
-    	session_start();
-	} 
-
-
+if (!isset($_SESSION['tiempo'])) {
+    $_SESSION['tiempo']=time();
+  }
+  else if (time() - $_SESSION['tiempo'] > 120) {
+    session_destroy();
+    /* Aquí redireccionas a la url especifica */
+    header("Location: ./index.php");
+    die();  
+  }
+  $_SESSION['tiempo']=time();
+  
 include_once "./includes/modelProductos.php";
 $producto= new productos;
 

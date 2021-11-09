@@ -1,14 +1,28 @@
-<!--Aca va un pagina de bienvenida a la que se llega despues de loguearse correctamente-->
 <?php 
-  session_start();
- 
+
+  if(!isset($_SESSION)){ //Si no hay sesion iniciarla
+    session_start();
+  } 
+  
+  if (!isset($_SESSION['tiempo'])) {
+    $_SESSION['tiempo']=time();
+  }
+  else if (time() - $_SESSION['tiempo'] > 120) {
+    session_destroy();
+
+    header("Location: ./index.php");
+    die();  
+  }
+  $_SESSION['tiempo']=time();
+  
   if (!isset($_SESSION['infoTienda'])) {
     header('Location: ./index.php'); //Si no esta logeado lo redirige a index.php
   }  
-  else{    
-    require_once './includes/Page.php';
-    print_r($_SESSION['infoTienda']);
-  $body="<h1>Bienvenido ".$_SESSION['infoTienda']['nombre_tienda']."</h1>" ;
+  elseif (isset($_SESSION['infoTienda'])){  // No necesario pero para verificar que hay sesion iniciada
+   
+  require_once './includes/Page.php';
+    
+  $body="<h1>Bienvenido ".$_SESSION['infoTienda']['username']."</h1>" ;
   $body.='<p>Gracias por confiar en nosotros y utilizar esta plataforma para aumentar tus ventas.</p>
   <a>Pronto podras comenzar a publicar tus productos para que los clientes puedan verlos online.</a>';
 
